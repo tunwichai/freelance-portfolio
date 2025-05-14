@@ -437,3 +437,61 @@ footer p {
     padding: 4rem 0;
   }
 }
+
+/* Project and Blog Grids */
+.project-grid,
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 2rem; /* Space between cards */
+  margin-top: 2rem;
+}
+
+.project-card,
+.blog-card {
+  background-color: #1e293b; /* Slightly lighter than body background */
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none; /* For project-card which is an <a> tag */
+  color: #e2e8f0; /* Ensure text color contrasts with card background */
+  display: flex; /* For blog-card to help with footer alignment */
+  flex-direction: column; /* For blog-card */
+}
+
+.project-card:hover,
+.blog-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3,
+.blog-card h3 {
+  font-size: 1.5rem;
+  color: #93c5fd; /* Light blue for titles */
+  margin-bottom: 0.75rem;
+}
+
+.project-card p,
+.blog-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* For blog-card, pushes date to bottom */
+}
+
+.blog-card .post-date {
+  font-size: 0.875rem;
+  color: #94a3b8; /* Lighter text for date */
+  margin-top: auto; /* Pushes date to the bottom if content above is short */
+}
+
+.blog-card a { /* Styling for the link within blog-card */
+  text-decoration: none;
+  color: inherit; /* Inherit color from parent */
+}
+
+.blog-card a:hover h3 {
+  color: #60a5fa; /* Darker blue on hover for blog titles */
+}

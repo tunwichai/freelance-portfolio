@@ -7,11 +7,11 @@ permalink: /projects/
 
 สำรวจผลงานล่าสุดและโปรเจกต์ต่างๆ ที่เกี่ยวข้องกับการพัฒนาระบบ Agentic Document Workflows ที่ผมได้พัฒนาขึ้น
 
-<ul class="project-list">
+<div class="project-grid">
 {% for project in collections.project %}
-  <li>
-    <a href="{{ project.url }}">{{ project.data.title }}</a>
+  <a href="{{ project.url }}" class="project-card">
+    <h3>{{ project.data.title }}</h3>
     <p>{{ project.data.description | default("ไม่มีคำอธิบาย") }}</p>
-  </li>
+  </a>
 {% endfor %}
-</ul>
+</div>
