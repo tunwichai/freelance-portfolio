@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "build:css": "postcss src/assets/css/style.css --output _site/assets/css/style.css",
+    "build": "npx @11ty/eleventy && npm run build:css"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "cssnano": "^7.0.7",
+    "postcss": "^8.5.3"
   }
 }
