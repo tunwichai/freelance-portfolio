@@ -1,6 +1,21 @@
 /* CSS Variables */
 :root {
   --header-height: 80px; /* ความสูงของ header รวม padding */
+  --primary-bg: #111827; /* Very Dark Indigo/Gray */
+  --secondary-bg: #1f2937; /* Dark Gray */
+  --card-bg: rgba(31, 41, 55, 0.85); /* Slightly transparent Dark Gray for glassmorphism */
+  --card-border: rgba(209, 213, 219, 0.2); /* Light gray border for cards */
+  --text-primary: #f3f4f6; /* Light Gray */
+  --text-secondary: #d1d5db; /* Gray */
+  --accent-1: #2dd4bf; /* Teal */
+  --accent-2: #a78bfa; /* Violet */
+  --accent-3: #f472b6; /* Pink */
+  --accent-4: #38bdf8; /* Sky Blue */
+  --gradient-logo: linear-gradient(45deg, var(--accent-3), var(--accent-4));
+  --gradient-hero-text: linear-gradient(45deg, var(--accent-3), var(--accent-4));
+  --gradient-nav-hover: linear-gradient(90deg, var(--accent-2), var(--accent-1));
+  --gradient-footer: linear-gradient(90deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+  --hero-overlay: linear-gradient(120deg, rgba(17, 24, 39, 0.7), rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.7));
 }
 
 /* Reset and Base Styles */
@@ -28,9 +43,9 @@ body {
 
 /* Header (Glassmorphism) */
 header {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(17, 24, 39, 0.8); /* Changed using primary-bg with alpha */
   backdrop-filter: blur(12px);
-  color: #ffffff;
+  color: var(--text-primary); /* Changed */
   padding: 1.5rem 0;
   position: fixed;
   top: 0;
@@ -41,7 +56,7 @@ header {
 }
 
 header.scrolled {
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(17, 24, 39, 0.95); /* Changed using primary-bg with alpha */
   transform: translateY(0);
 }
 
@@ -56,7 +71,7 @@ header .logo {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 2px;
-  background: linear-gradient(45deg, #f472b6, #60a5fa);
+  background: var(--gradient-logo); /* Changed */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -263,7 +278,7 @@ main {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--card-bg); /* Changed */
   backdrop-filter: blur(10px);
   padding: 2.5rem;
   border-radius: 16px;
@@ -271,7 +286,7 @@ main {
   text-align: center;
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; /* เพิ่ม border-color ใน transition */
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--card-border); /* Changed */
 }
 
 .card:hover {
@@ -338,8 +353,8 @@ main {
 
 /* Footer */
 footer {
-  background: linear-gradient(90deg, #0f172a 0%, #1e3a8a 100%);
-  color: #cbd5e1;
+  background: var(--gradient-footer); /* Changed */
+  color: var(--text-secondary); /* Changed */
   text-align: center;
   padding: 2rem 0;
   margin-top: 4rem;
@@ -404,7 +419,7 @@ footer p {
     position: absolute;
     top: 100%; /* Position below the header */
     left: 0;
-    background: rgba(15, 23, 42, 0.98); /* Slightly more opaque for readability */
+    background: rgba(17, 24, 39, 0.98); /* Slightly more opaque for readability */
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
@@ -449,13 +464,13 @@ footer p {
 
 .project-card,
 .blog-card {
-  background-color: #1e293b; /* Slightly lighter than body background */
+  background-color: var(--secondary-bg); /* Changed */
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none; /* For project-card which is an <a> tag */
-  color: #e2e8f0; /* Ensure text color contrasts with card background */
+  color: var(--text-primary); /* Changed */
   display: flex; /* For blog-card to help with footer alignment */
   flex-direction: column; /* For blog-card */
 }
@@ -464,12 +479,13 @@ footer p {
 .blog-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent-1); /* Changed */
 }
 
 .project-card h3,
 .blog-card h3 {
   font-size: 1.5rem;
-  color: #93c5fd; /* Light blue for titles */
+  color: var(--accent-1); /* Changed */
   margin-bottom: 0.75rem;
 }
 
@@ -478,13 +494,14 @@ footer p {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
-  flex-grow: 1; /* For blog-card, pushes date to bottom */
+  flex-grow: 1;
+  color: var(--text-secondary); /* Changed */
 }
 
 .blog-card .post-date {
   font-size: 0.875rem;
-  color: #94a3b8; /* Lighter text for date */
-  margin-top: auto; /* Pushes date to the bottom if content above is short */
+  color: var(--text-secondary); /* Kept similar, but ensure it's from variable */
+  margin-top: auto;
 }
 
 .blog-card a { /* Styling for the link within blog-card */
@@ -493,5 +510,5 @@ footer p {
 }
 
 .blog-card a:hover h3 {
-  color: #60a5fa; /* Darker blue on hover for blog titles */
+  color: var(--accent-2); /* Changed */
 }
