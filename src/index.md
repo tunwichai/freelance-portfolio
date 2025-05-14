@@ -3,7 +3,7 @@ title: หน้าแรก
 layout: layouts/base.njk
 ---
 <div class="hero">
-  <h1>ยินดีต้อนรับสู่ Portfolio ของ {{ site.author }}</h1>
+  <h1>ยินดีต้อนรับสู่เว็บรวมผลงานของ {{ site.author }}</h1>
   <p>{{ site.description }} ลองดูผลงานและแนวคิดของผมด้านล่างนี้ครับ!</p>
 </div>
 
