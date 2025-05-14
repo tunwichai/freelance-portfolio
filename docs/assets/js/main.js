@@ -1,6 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Hamburger menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
     // Scroll-based header effect
     const header = document.querySelector('header');
+    if (menuToggle && header) {
+      menuToggle.addEventListener('click', () => {
+        header.classList.toggle('nav-active');
+        // Toggle aria-expanded attribute for accessibility
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+      });
+    }
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
         header.classList.add('scrolled');

@@ -49,6 +49,7 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative; /* Added for positioning menu on mobile */
 }
 
 header .logo {
@@ -70,6 +71,98 @@ header .logo:hover {
 header ul {
   display: flex;
   list-style: none;
+}
+
+header ul li {
+  margin-left: 32px;
+}
+
+header ul li a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease; /* Added transform to transition */
+}
+
+header ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px; /* สามารถปรับความหนาตามต้องการ */
+  bottom: -8px; /* ปรับตำแหน่งให้เหมาะสม */
+  left: 50%; /* เริ่มจากตรงกลาง */
+  transform: translateX(-50%); /* จัดให้อยู่ตรงกลาง */
+  background: linear-gradient(90deg, #f472b6, #60a5fa);
+  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* ปรับ timing function เพื่อความลื่นไหล */
+}
+
+header ul li a:hover::after {
+  width: 100%;
+  background: linear-gradient(90deg, #a78bfa, #4ade80); /* เปลี่ยนสี gradient เมื่อ hover เพื่อความโดดเด่น */
+}
+
+header ul li a:hover {
+  color: #60a5fa;
+  transform: translateY(-2px); /* Added subtle upward movement */
+}
+
+/* Menu Toggle Button (Hamburger) */
+.menu-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001; /* Ensure it's above other header content */
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #e2e8f0;
+  position: relative;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #e2e8f0;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, bottom 0.3s ease-in-out;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+}
+
+/* Styles for when the menu is open (toggled by JavaScript) */
+.nav-active .hamburger {
+  background-color: transparent; /* Hide middle bar */
+}
+
+.nav-active .hamburger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-active .hamburger::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.nav-links {
+  display: flex; /* Keep existing flex for desktop */
 }
 
 header ul li {
@@ -295,14 +388,41 @@ footer p {
   }
 
   header nav {
-    flex-direction: column;
-    gap: 1.5rem;
+    flex-direction: row; /* Keep logo and toggle on same line */
+    flex-wrap: wrap; /* Allow items to wrap if needed, though ideally they won't */
+    align-items: center; /* Vertically align logo and toggle */
   }
 
+  .menu-toggle {
+    display: block; /* Show hamburger on mobile */
+    order: 1; /* Ensure toggle is after logo if needed, or adjust as per design */
+  }
+
+  .nav-links {
+    display: none; /* Hide nav links by default on mobile */
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    background: rgba(15, 23, 42, 0.98); /* Slightly more opaque for readability */
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-active .nav-links {
+    display: flex; /* Show nav links when menu is active */
+    flex-direction: column;
+    align-items: center;
+  }
+  
   header ul {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem; /* Increased gap for better touch targets */
     align-items: center;
+    width: 100%; /* Make ul take full width of its container */
+    padding: 1rem 0;
   }
 
   header ul li {
