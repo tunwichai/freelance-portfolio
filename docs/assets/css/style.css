@@ -202,7 +202,7 @@ header ul li a:hover {
 
 /* Main */
 main {
-  padding: calc(var(--header-height) + 4.5rem) 0 4rem 0; /* เพิ่ม padding-top ชดเชย header */
+  padding: calc(var(--header-height) + 4rem) 0 4rem 0; /* เพิ่ม padding-top ชดเชย header */
 }
 
 /* Hero Section (Parallax) */
