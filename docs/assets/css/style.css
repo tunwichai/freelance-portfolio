@@ -88,15 +88,17 @@ header ul li a::after {
   content: '';
   position: absolute;
   width: 0;
-  height: 3px;
-  bottom: -6px;
-  left: 0;
+  height: 3px; /* สามารถปรับความหนาตามต้องการ */
+  bottom: -8px; /* ปรับตำแหน่งให้เหมาะสม */
+  left: 50%; /* เริ่มจากตรงกลาง */
+  transform: translateX(-50%); /* จัดให้อยู่ตรงกลาง */
   background: linear-gradient(90deg, #f472b6, #60a5fa);
-  transition: width 0.4s ease;
+  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* ปรับ timing function เพื่อความลื่นไหล */
 }
 
 header ul li a:hover::after {
   width: 100%;
+  background: linear-gradient(90deg, #a78bfa, #4ade80); /* เปลี่ยนสี gradient เมื่อ hover เพื่อความโดดเด่น */
 }
 
 header ul li a:hover {
@@ -169,14 +171,15 @@ main {
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; /* เพิ่ม border-color ใน transition */
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-15px) scale(1.03); /* เพิ่ม scale และปรับ translateY */
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35); /* ปรับเงาให้ดูมีมิติมากขึ้น */
+  border-color: #60a5fa; /* เปลี่ยนสีขอบเมื่อ hover */
 }
 
 .card h2 {
@@ -229,13 +232,13 @@ footer p {
 /* Scroll-Based Animations (JavaScript) */
 .reveal {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(60px) rotateX(-20deg); /* เพิ่ม rotateX เพื่อมิติที่น่าสนใจ */
+  transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* ปรับ timing function และ duration */
 }
 
 .reveal.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) rotateX(0deg); /* กลับสู่สถานะปกติ */
 }
 
 /* Responsive Design */
