@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +16,11 @@
       </button>
       <div class="nav-links">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/projects/">Projects</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/">หน้าแรก</a></li>
+          <li><a href="/projects/">ผลงาน</a></li>
+          <li><a href="/blog/">บทความ</a></li>
+          <li><a href="/about/">เกี่ยวกับฉัน</a></li>
+          <li><a href="/contact/">ติดต่อ</a></li>
         </ul>
       </div>
     </nav>
@@ -29,7 +29,7 @@
     {{ content | safe }}
   </main>
   <footer>
-    <p>© {{ site.year }} {{ site.title }}. All rights reserved.</p>
+    <p>© {{ site.year }} {{ site.author | default(site.title) }}. สงวนลิขสิทธิ์.</p>
   </footer>
   <script src="/assets/js/main.js"></script>
 </body>

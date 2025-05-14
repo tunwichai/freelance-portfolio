@@ -1,11 +1,13 @@
 ---
-title: Sample Project
+title: ตัวอย่างโปรเจกต์ระบบ Agentic Workflow
 layout: layouts/base.njk
 tags: project
-description: A sample project showcasing my skills.
+description: ตัวอย่างการพัฒนาระบบ Agentic Document Workflow เพื่อเพิ่มประสิทธิภาพการทำงาน
 ---
-# Sample Project
+# ตัวอย่างโปรเจกต์: ระบบจัดการเอกสารอัจฉริยะ
 
-This is a sample project showcasing my skills.
+นี่คือตัวอย่างโปรเจกต์ที่แสดงให้เห็นถึงความสามารถในการพัฒนาระบบ agentic document workflows เพื่อช่วยให้การจัดการเอกสารเป็นไปอย่างมีประสิทธิภาพและอัตโนมัติสำหรับหน่วยงานทั้งภาครัฐและเอกชน
+
+ระบบนี้สามารถช่วยลดระยะเวลาการทำงานซ้ำซ้อน, เพิ่มความแม่นยำของข้อมูล, และช่วยให้การเข้าถึงเอกสารเป็นไปได้ง่ายและรวดเร็วยิ่งขึ้น
 
 ![Sample Image](/assets/images/sample.jpg)

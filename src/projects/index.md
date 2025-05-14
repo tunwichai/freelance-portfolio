@@ -1,17 +1,17 @@
 ---
-title: My Projects
+title: ผลงานของฉัน
 layout: layouts/base.njk
 permalink: /projects/
 ---
-# My Projects
+# ผลงานของฉัน
 
-Explore my latest work and projects.
+สำรวจผลงานล่าสุดและโปรเจกต์ต่างๆ ที่เกี่ยวข้องกับการพัฒนาระบบ Agentic Document Workflows ที่ผมได้พัฒนาขึ้น
 
 <ul class="project-list">
 {% for project in collections.project %}
   <li>
     <a href="{{ project.url }}">{{ project.data.title }}</a>
-    <p>{{ project.data.description | default("No description available") }}</p>
+    <p>{{ project.data.description | default("ไม่มีคำอธิบาย") }}</p>
   </li>
 {% endfor %}
 </ul>

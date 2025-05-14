@@ -1,7 +1,7 @@
 ---
-title: About Me
+title: เกี่ยวกับฉัน
 layout: layouts/base.njk
 ---
-# About Me
+# เกี่ยวกับ {{ site.author }}
 
-I'm a passionate creator with a focus on technology and design.
+ผมคือ {{ site.author }} ผู้เชี่ยวชาญด้านการพัฒนาระบบ Agentic Document Workflows สำหรับหน่วยงานทั้งภาครัฐและเอกชน ด้วยความมุ่งมั่นในการนำเทคโนโลยีมาประยุกต์ใช้เพื่อเพิ่มประสิทธิภาพและความคล่องตัวในการจัดการเอกสารและกระบวนการทำงาน ผมพร้อมที่จะนำเสนอโซลูชันที่ตอบโจทย์ความต้องการเฉพาะของคุณ

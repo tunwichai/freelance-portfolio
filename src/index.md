@@ -1,19 +1,19 @@
 ---
-title: Home
+title: หน้าแรก
 layout: layouts/base.njk
 ---
 <div class="hero">
-  <h1>Welcome to My Portfolio</h1>
-  <p>I'm a creative professional showcasing my projects and ideas. Explore my work below!</p>
+  <h1>ยินดีต้อนรับสู่ Portfolio ของ {{ site.author }}</h1>
+  <p>{{ site.description }} ลองดูผลงานและแนวคิดของผมด้านล่างนี้ครับ!</p>
 </div>
 
 <div class="grid">
   <a href="/projects/" class="card reveal">
-    <h2>View Projects</h2>
-    <p>Explore my latest work and projects.</p>
+    <h2>ดูผลงาน</h2>
+    <p>สำรวจผลงานล่าสุดและโปรเจกต์ต่างๆ ของผม</p>
   </a>
   <a href="/blog/" class="card reveal">
-    <h2>Read Blog</h2>
-    <p>Discover my thoughts and insights.</p>
+    <h2>อ่านบทความ</h2>
+    <p>ค้นพบแนวคิดและข้อมูลเชิงลึกของผม</p>
   </a>
 </div>
