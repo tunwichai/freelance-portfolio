@@ -6,6 +6,8 @@ module.exports = function(eleventyConfig) {
   // Watch CSS files for changes
   eleventyConfig.addWatchTarget("src/assets/css/");
 
+  eleventyConfig.addPassthroughCopy("src/assets/js");
+
   eleventyConfig.addCollection("project", function(collectionApi) {
     return collectionApi.getFilteredByTag("project");
   });
