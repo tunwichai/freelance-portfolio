@@ -1,11 +1,11 @@
 ---
-title: ผลงานของฉัน
+title: ผลงานของเรา
 layout: layouts/base.njk
 permalink: /projects/
 ---
-# ผลงานของฉัน
+# ผลงานของเรา
 
-สำรวจผลงานล่าสุดและโปรเจกต์ต่างๆ ที่เกี่ยวข้องกับการพัฒนาระบบ Agentic Document Workflows ที่ผมได้พัฒนาขึ้น
+สำรวจผลงานล่าสุดและโปรเจกต์ต่างๆ ที่เกี่ยวข้องกับการพัฒนาระบบ AI Workflows ที่เราได้พัฒนาขึ้น
 
 <div class="project-grid">
 {% for project in collections.project %}

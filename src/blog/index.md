@@ -3,9 +3,9 @@ title: บทความ
 layout: layouts/base.njk
 permalink: /blog/
 ---
-# บทความของฉัน
+# บทความของเรา
 
-ยินดีต้อนรับสู่บล็อกของ {{ site.author }}! ที่นี่คุณจะได้พบกับบทความล่าสุดเกี่ยวกับเทคโนโลยี, การพัฒนาระบบ, และ agentic document workflows
+ยินดีต้อนรับสู่บล็อกของ {{ site.author }}! ที่นี่คุณจะได้พบกับบทความล่าสุดเกี่ยวกับเทคโนโลยี และเทคนิคสำหรับการพัฒนาระบบ
 
 <div class="blog-grid">
 {% for post in collections.blog %}
