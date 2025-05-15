@@ -290,6 +290,12 @@ main {
   border: 1px solid var(--card-border); /* Uses new variable */
 }
 
+/* Add this rule to remove underline from anchor tags with class "card" */
+a.card {
+  text-decoration: none;
+  color: inherit; /* Ensures the text color inside the card is determined by h2, p styles */
+}
+
 .card:hover {
   transform: translateY(-15px) scale(1.03);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
