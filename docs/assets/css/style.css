@@ -1,21 +1,21 @@
 /* CSS Variables */
 :root {
   --header-height: 80px; /* ความสูงของ header รวม padding */
-  --primary-bg: #111827; /* Very Dark Indigo/Gray */
-  --secondary-bg: #1f2937; /* Dark Gray */
-  --card-bg: rgba(31, 41, 55, 0.85); /* Slightly transparent Dark Gray for glassmorphism */
-  --card-border: rgba(209, 213, 219, 0.2); /* Light gray border for cards */
-  --text-primary: #f3f4f6; /* Light Gray */
-  --text-secondary: #d1d5db; /* Gray */
-  --accent-1: #2dd4bf; /* Teal */
-  --accent-2: #a78bfa; /* Violet */
-  --accent-3: #f472b6; /* Pink */
-  --accent-4: #38bdf8; /* Sky Blue */
-  --gradient-logo: linear-gradient(45deg, var(--accent-3), var(--accent-4));
-  --gradient-hero-text: linear-gradient(45deg, var(--accent-3), var(--accent-4));
+  --primary-bg: #0B192E;       /* Deep Navy Blue - Trust, Technology */
+  --secondary-bg: #122B47;     /* Darker Slate Blue - Professionalism */
+  --card-bg: rgba(18, 43, 71, 0.85); /* Semi-transparent Slate Blue for cards */
+  --card-border: rgba(100, 255, 218, 0.15); /* Subtle Teal border for cards */
+  --text-primary: #E6F1FF;     /* Very Light Blue/Off-White - Clarity */
+  --text-secondary: #A8B2D1;   /* Light Slate Gray - Softness, Readability */
+  --accent-1: #64FFDA;         /* Bright Teal/Mint - Attention, Modern */
+  --accent-2: #7DF9FF;         /* Electric Cyan - Energetic, Techy */
+  --accent-3: #FFC371;         /* Soft Orange/Peach - Friendliness, Warmth (use sparingly) */
+  --accent-4: #50C8FF;         /* Bright Sky Blue - Trust, Openness */
+  --gradient-logo: linear-gradient(45deg, var(--accent-1), var(--accent-4));
+  --gradient-hero-text: linear-gradient(45deg, var(--accent-1), var(--accent-4));
   --gradient-nav-hover: linear-gradient(90deg, var(--accent-2), var(--accent-1));
   --gradient-footer: linear-gradient(90deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
-  --hero-overlay: linear-gradient(120deg, rgba(17, 24, 39, 0.7), rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.7));
+  --hero-overlay: linear-gradient(120deg, rgba(11, 25, 46, 0.75), rgba(18, 43, 71, 0.85), rgba(11, 25, 46, 0.75));
 }
 
 /* Reset and Base Styles */
@@ -43,9 +43,9 @@ body {
 
 /* Header (Glassmorphism) */
 header {
-  background: rgba(17, 24, 39, 0.8); /* Changed using primary-bg with alpha */
+  background: rgba(11, 25, 46, 0.8); /* Changed using new primary-bg with alpha */
   backdrop-filter: blur(12px);
-  color: var(--text-primary); /* Changed */
+  color: var(--text-primary);
   padding: 1.5rem 0;
   position: fixed;
   top: 0;
@@ -56,7 +56,7 @@ header {
 }
 
 header.scrolled {
-  background: rgba(17, 24, 39, 0.95); /* Changed using primary-bg with alpha */
+  background: rgba(11, 25, 46, 0.95); /* Changed using new primary-bg with alpha */
   transform: translateY(0);
 }
 
@@ -71,7 +71,7 @@ header .logo {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 2px;
-  background: var(--gradient-logo); /* Changed */
+  background: var(--gradient-logo); /* Uses new gradient */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -278,32 +278,32 @@ main {
 }
 
 .card {
-  background: var(--card-bg); /* Changed */
+  background: var(--card-bg); /* Uses new variable */
   backdrop-filter: blur(10px);
   padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; /* เพิ่ม border-color ใน transition */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   position: relative;
-  border: 1px solid var(--card-border); /* Changed */
+  border: 1px solid var(--card-border); /* Uses new variable */
 }
 
 .card:hover {
-  transform: translateY(-15px) scale(1.03); /* เพิ่ม scale และปรับ translateY */
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35); /* ปรับเงาให้ดูมีมิติมากขึ้น */
-  border-color: #60a5fa; /* เปลี่ยนสีขอบเมื่อ hover */
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  border-color: var(--accent-1); /* Changed */
 }
 
 .card h2 {
   font-size: 1.8rem;
   margin-bottom: 0.8rem;
-  color: #f472b6;
+  color: var(--accent-3); /* Changed to new accent for friendliness */
   animation: fadeIn 1.5s ease-out;
 }
 
 .card p {
-  color: #cbd5e1;
+  color: var(--text-secondary); /* Changed */
   animation: fadeIn 1.7s ease-out;
 }
 
@@ -331,10 +331,10 @@ main {
 /* Added logoGlow animation */
 @keyframes logoGlow {
   0%, 100% {
-    text-shadow: 0 0 7px rgba(96, 165, 250, 0.4), 0 0 10px rgba(244, 114, 182, 0.2);
+    text-shadow: 0 0 7px color-mix(in srgb, var(--accent-4) 40%, transparent), 0 0 10px color-mix(in srgb, var(--accent-1) 20%, transparent);
   }
   50% {
-    text-shadow: 0 0 10px rgba(96, 165, 250, 0.6), 0 0 15px rgba(244, 114, 182, 0.4);
+    text-shadow: 0 0 10px color-mix(in srgb, var(--accent-4) 60%, transparent), 0 0 15px color-mix(in srgb, var(--accent-1) 40%, transparent);
   }
 }
 
@@ -353,8 +353,8 @@ main {
 
 /* Footer */
 footer {
-  background: var(--gradient-footer); /* Changed */
-  color: var(--text-secondary); /* Changed */
+  background: var(--gradient-footer); /* Uses new gradient */
+  color: var(--text-secondary);
   text-align: center;
   padding: 2rem 0;
   margin-top: 4rem;
@@ -419,7 +419,7 @@ footer p {
     position: absolute;
     top: 100%; /* Position below the header */
     left: 0;
-    background: rgba(17, 24, 39, 0.98); /* Slightly more opaque for readability */
+    background: rgba(11, 25, 46, 0.98); /* Changed using new primary-bg with alpha */
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
@@ -464,28 +464,29 @@ footer p {
 
 .project-card,
 .blog-card {
-  background-color: var(--secondary-bg); /* Changed */
+  background-color: var(--secondary-bg); /* Uses new variable */
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none; /* For project-card which is an <a> tag */
-  color: var(--text-primary); /* Changed */
-  display: flex; /* For blog-card to help with footer alignment */
-  flex-direction: column; /* For blog-card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Added border-color to transition */
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent; /* Initial transparent border */
 }
 
 .project-card:hover,
 .blog-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-  border-color: var(--accent-1); /* Changed */
+  border-color: var(--accent-1); /* Uses new accent for hover border */
 }
 
 .project-card h3,
 .blog-card h3 {
   font-size: 1.5rem;
-  color: var(--accent-1); /* Changed */
+  color: var(--accent-1); /* Uses new accent */
   margin-bottom: 0.75rem;
 }
 
@@ -495,12 +496,12 @@ footer p {
   line-height: 1.6;
   margin-bottom: 1rem;
   flex-grow: 1;
-  color: var(--text-secondary); /* Changed */
+  color: var(--text-secondary); /* Uses new variable */
 }
 
 .blog-card .post-date {
   font-size: 0.875rem;
-  color: var(--text-secondary); /* Kept similar, but ensure it's from variable */
+  color: var(--text-secondary); /* Uses new variable */
   margin-top: auto;
 }
 
@@ -510,5 +511,5 @@ footer p {
 }
 
 .blog-card a:hover h3 {
-  color: var(--accent-2); /* Changed */
+  color: var(--accent-2); /* Uses new accent */
 }
