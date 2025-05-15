@@ -30,7 +30,8 @@ body {
   margin: 0;
   background-color: #0f172a; /* Dark blue-gray background */
   color: #e2e8f0; /* Light gray text for good contrast */
-  line-height: 1.7;
+  font-size: 1.125rem; /* Added: Base font size (18px if root is 16px) */
+  line-height: 1.8; /* Adjusted: Increased for better Thai readability */
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
