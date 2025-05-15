@@ -269,12 +269,6 @@ main {
   padding: 0 1rem; /* เพิ่ม padding ด้านข้างเพื่อให้ข้อความไม่ชิดขอบจอเกินไป */
 }
 
-@media (min-width: 768px) {
-  font-size: 2.5rem; /* ปรับขนาดให้ใหญ่ขึ้นเล็กน้อยสำหรับหน้าจอใหญ่ */
-  padding: 0; /* ยกเลิก padding สำหรับหน้าจอใหญ่ */
-}
-}
-
 .hero p {
   font-size: 1.4rem;
   max-width: 700px;
@@ -435,7 +429,8 @@ footer p a:hover {
   }
 
   .hero h1 {
-    font-size: 5rem;
+    font-size: 2.5rem; /* ปรับขนาดให้ใหญ่ขึ้นเล็กน้อยสำหรับหน้าจอใหญ์ */
+    padding: 0; /* ยกเลิก padding สำหรับหน้าจอใหญ์ */
   }
 
   header .logo {
