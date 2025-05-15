@@ -222,7 +222,7 @@ header ul li a.line-contact-btn::after {
 
 /* Main */
 main {
-  padding: calc(var(--header-height) + 4rem) 0 4rem 0; /* เพิ่ม padding-top ชดเชย header */
+  padding: calc(var(--header-height) + 3rem) 0 4rem 0; /* เพิ่ม padding-top ชดเชย header */
 }
 
 /* Hero Section (Parallax) */
@@ -389,6 +389,23 @@ footer {
 
 footer p {
   font-size: 1rem;
+  margin-bottom: 0.5rem; /* Add some space between paragraphs in footer */
+}
+
+footer p:last-child {
+  margin-bottom: 0; /* Remove margin from the last paragraph */
+}
+
+footer p a {
+  color: var(--accent-1); /* Use accent color for the link */
+  text-decoration: none; /* Remove underline by default */
+  font-weight: 500;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+footer p a:hover {
+  color: var(--accent-4); /* Change color on hover */
+  text-decoration: underline; /* Add underline on hover for better UX */
 }
 
 /* Scroll-Based Animations (JavaScript) */
