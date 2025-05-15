@@ -216,6 +216,10 @@ header ul li a:hover {
   transform: translateY(-2px); /* Added subtle upward movement */
 }
 
+header ul li a.line-contact-btn::after {
+  display: none; /* ซ่อนขีดเส้นใต้ effect ของเมนูอื่น */
+}
+
 /* Main */
 main {
   padding: calc(var(--header-height) + 4rem) 0 4rem 0; /* เพิ่ม padding-top ชดเชย header */
@@ -313,6 +317,21 @@ a.card {
   color: var(--text-secondary); /* Changed */
   animation: fadeIn 1.7s ease-out;
 }
+
+/* ใน style.css */
+.line-contact-btn {
+  background-color: #00B900; /* สีเขียวของ Line */
+  color: white !important; /* ทำให้ตัวอักษรเป็นสีขาว */
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.line-contact-btn:hover {
+  background-color: #00A300; /* สีเขียวเข้มขึ้นเมื่อ hover */
+  color: white !important;
+}
+
 
 /* Animations */
 @keyframes fadeInUp {
